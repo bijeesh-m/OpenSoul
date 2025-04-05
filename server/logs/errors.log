@@ -1,0 +1,24 @@
+2025-03-12T11:21:34.529Z [ERROR]: Something went wrong! 
+Stack: Error: Something went wrong!
+    at D:\OpenSoul\server\server.js:14:19
+    at Layer.handle [as handle_request] (D:\OpenSoul\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\OpenSoul\server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\OpenSoul\server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\OpenSoul\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\OpenSoul\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\OpenSoul\server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\OpenSoul\server\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (D:\OpenSoul\server\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (D:\OpenSoul\server\node_modules\express\lib\router\layer.js:95:5)
+2025-03-15T10:59:54.188Z [ERROR]: Expected double-quoted property name in JSON at position 30 
+Stack: SyntaxError: Expected double-quoted property name in JSON at position 30
+    at JSON.parse (<anonymous>)
+    at parse (D:\OpenSoul\server\node_modules\body-parser\lib\types\json.js:92:19)
+    at D:\OpenSoul\server\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at invokeCallback (D:\OpenSoul\server\node_modules\raw-body\index.js:238:16)
+    at done (D:\OpenSoul\server\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (D:\OpenSoul\server\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:514:28)
+    at endReadableNT (node:internal/streams/readable:1376:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)

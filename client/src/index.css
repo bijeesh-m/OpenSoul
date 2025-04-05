@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.bg-soul-gradient {
+    background: linear-gradient(135deg, #00C4B4, #FF6F61);
+  }
