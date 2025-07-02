@@ -22,9 +22,7 @@ connectDB();
 app.use("/auth", authRoutes);
 app.use("/admin", adminRoutes);
 app.use("/user", userRoutes);
-app.get("/", (req, res) => {
-    res.send("Hello eb!");
-});
+
 
 app.use(errorHandler);
 app.use(notFoundRoute);
