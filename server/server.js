@@ -20,6 +20,10 @@ require("dotenv").config();
 
 connectDB();
 
+app.use("/",(req,res)=>{
+    res.send("Hello from server")
+})
+
 app.use("/auth", authRoutes);
 app.use("/admin", adminRoutes);
 app.use("/user", userRoutes);
