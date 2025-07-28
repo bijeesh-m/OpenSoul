@@ -12,10 +12,10 @@ const AdminLayout = () => {
         dispatch(checkAuthStatus("Admin"));
     }, [dispatch]);
 
-    // if (error) {
-    //     console.log(error)
-    //     window.location.replace("/admin");
-    // }
+    if (error) {
+        console.log(error)
+        window.location.replace("/admin");
+    }
 
     return (
         <div>
