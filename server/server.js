@@ -6,13 +6,15 @@ const authRoutes = require("./routes/authRoutes");
 const errorHandler = require("./middlewares/errorMiddleware");
 const notFoundRoute = require("./middlewares/notFoundRoute");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 const cors = require("cors");
 
 const app = express();
 require("dotenv").config();
 
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+// app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+// app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 app.use(cookieParser());
 
@@ -20,18 +22,19 @@ require("dotenv").config();
 
 connectDB();
 
-app.use("/",(req,res)=>{
-    res.send("Hello from server")
-})
-
 app.use("/auth", authRoutes);
 app.use("/admin", adminRoutes);
 app.use("/user", userRoutes);
 
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
 
 app.use(errorHandler);
 app.use(notFoundRoute);
 
 app.listen(process.env.PORT, (err) => {
-    console.log(`server is running on port ${process.env.PORT}`);
+  console.log(`server is running on port ${process.env.PORT}`);
 });

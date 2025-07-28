@@ -49,6 +49,7 @@ const authSlice = createSlice({
             .addCase(checkAuthStatus.rejected, (state, action) => {
                 state.loading = false;
                 state.user = null;
+                console.log(action.payload)
                 state.error = action.payload;
             });
     },

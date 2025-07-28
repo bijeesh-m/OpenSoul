@@ -14,8 +14,7 @@ export const login = async (data) => {
 
 export const adminlogin = async (data) => {
     try {
-        const response = await authInstance.post("/adminlogin", data);
-        
+        const response = await authInstance.post("/adminlogin", data);        
         return response.data;
     } catch (error) {
         console.error("Admin Login API error:", error);
