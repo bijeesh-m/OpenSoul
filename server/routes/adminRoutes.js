@@ -4,7 +4,7 @@ const { verifyToken } = require("../middlewares/authMiddleware");
 const upload = require("../middlewares/multer");
 const router = express.Router();
 
-router.use(verifyToken);
+// router.use(verifyToken);
 
 router
     .route("/confession-group")
