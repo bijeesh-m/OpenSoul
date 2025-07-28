@@ -14,7 +14,7 @@ const AdminLayout = () => {
 
     if (error) {
         console.log("hello",error)
-        window.location.replace("/admin-login");
+        window.location.replace("/admin/admin-login");
     }
 
     return (
