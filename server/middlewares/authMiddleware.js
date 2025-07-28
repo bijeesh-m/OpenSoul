@@ -10,6 +10,7 @@ module.exports.verifyToken = (req, res, next) => {
 
 
     if (!token) {
+        console.log("token check")
         return res.status(401).json({ message: "Access Denied. No token provided." });
     }
 
