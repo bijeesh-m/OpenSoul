@@ -9,7 +9,7 @@ import AdminLogin from "../pages/auth/AdminLogin";
 function AdminRoutes() {
     return (
         <Routes>
-            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin" element={<AdminLogin />} />
             <Route path="/" element={<AdminLayout />}>
                 <Route path="/dashboard" element={<AdminDashboard />} />
                 <Route path="/students" element={<StudentManagement />} />

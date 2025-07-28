@@ -8,14 +8,14 @@ const AdminLayout = () => {
     const dispatch = useDispatch();
     const { error, loading } = useSelector((state) => state.auth);
 
-    // useEffect(() => {
-    //     dispatch(checkAuthStatus("Admin"));
-    // }, [dispatch]);
+    useEffect(() => {
+        dispatch(checkAuthStatus("Admin"));
+    }, [dispatch]);
 
-    // if (error) {
-    //     console.log("hello",error)
-    //     window.location.replace("/admin-login");
-    // }
+    if (error) {
+        console.log("hello",error)
+        window.location.replace("/admin");
+    }
 
     return (
         <div>
