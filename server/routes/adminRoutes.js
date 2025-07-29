@@ -4,10 +4,13 @@ const { verifyToken } = require("../middlewares/authMiddleware");
 const upload = require("../middlewares/multer");
 const router = express.Router();
 
-
 router
-  .route("/confession-group", verifyToken)
-  .post(upload.single("bgImage"), adminController.createConfessionGroup)
+  .route("/confession-group")
+  .post(
+    verifyToken,
+    upload.single("bgImage"),
+    adminController.createConfessionGroup
+  )
   .get(adminController.getAllConfessionGroups);
 
 router
