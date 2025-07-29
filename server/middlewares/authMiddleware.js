@@ -9,6 +9,7 @@ module.exports.verifyToken = (req, res, next) => {
     let token = adminToken || userToken; 
 
 
+
     if (!token) {
         console.log("token check")
         return res.status(401).json({ message: "Access Denied. No token provided." });
@@ -16,6 +17,7 @@ module.exports.verifyToken = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        console.log(decoded)
         req.user = decoded; // Attach user data to the request
         next();
     } catch (error) {
