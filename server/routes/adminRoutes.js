@@ -4,21 +4,30 @@ const { verifyToken } = require("../middlewares/authMiddleware");
 const upload = require("../middlewares/multer");
 const router = express.Router();
 
+router
+  .route("/confession-group")
+  .post(
+    verifyToken,
+    upload.single("bgImage"),
+    adminController.createConfessionGroup
+  )
+  .get(verifyToken, adminController.getAllConfessionGroups);
 
 router
-  .route("/confession-group", verifyToken)
-  .post(upload.single("bgImage"), adminController.createConfessionGroup)
-  .get(adminController.getAllConfessionGroups);
+  .route("/confession-group/:id")
+  .get(verifyToken, adminController.getConfessionGroup)
+  .put(
+    verifyToken,
+    upload.single("bgImage"),
+    adminController.updateConfessionGroup
+  )
+  .delete(verifyToken, adminController.deleteConfessionGroup);
 
-router
-  .route("/confession-group/:id", verifyToken)
-  .get(adminController.getConfessionGroup)
-  .put(upload.single("bgImage"), adminController.updateConfessionGroup)
-  .delete(adminController.deleteConfessionGroup);
-
-router
-  .route("/confession-group/:id/add-member", verifyToken)
-  .put(adminController.addMember);
+router.put(
+  "/confession-group/:id/add-member",
+  verifyToken,
+  adminController.addMember
+);
 
 router.get(
   "/confessions/:groupId",
