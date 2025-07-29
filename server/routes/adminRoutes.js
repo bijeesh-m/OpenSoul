@@ -6,22 +6,18 @@ const router = express.Router();
 
 router
   .route("/confession-group")
-  .post(
-    verifyToken,
-    upload.single("bgImage"),
-    adminController.createConfessionGroup
-  )
+  .all(verifyToken)
+  .post(upload.single("bgImage"), adminController.createConfessionGroup)
   .get(adminController.getAllConfessionGroups);
 
 router
-  .route("/confession-group/:id", verifyToken)
+  .route("/confession-group/:id")
+  .all(verifyToken)
   .get(adminController.getConfessionGroup)
   .put(upload.single("bgImage"), adminController.updateConfessionGroup)
   .delete(adminController.deleteConfessionGroup);
 
-router
-  .route("/confession-group/:id/add-member", verifyToken)
-  .put(adminController.addMember);
+router.put(adminController.addMember);
 
 router.get(
   "/confessions/:groupId",
@@ -34,10 +30,17 @@ router.delete(
   adminController.deleteConfession
 );
 
-router.get("/student", verifyToken, adminController.getAllStudents);
-router.get("/student/:id", verifyToken, adminController.getStudentById);
-router.post("/student", verifyToken, adminController.createStudent);
-router.put("/student/:id", verifyToken, adminController.updateStudent);
-router.delete("/student/:id", verifyToken, adminController.deleteStudent);
+router
+  .route("/student")
+  .all(verifyToken)
+  .get(adminController.getAllStudents)
+  .post(adminController.createStudent);
+
+router
+  .route("/student/:id")
+  .all(verifyToken)
+  .get(adminController.getStudentById)
+  .put(adminController.updateStudent)
+  .delete(adminController.deleteStudent);
 
 module.exports = router;
