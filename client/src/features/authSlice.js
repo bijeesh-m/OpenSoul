@@ -10,7 +10,7 @@ export const checkAuthStatus = createAsyncThunk("auth/checkStatus", async (role,
             if (role === "User") {
                 return window.location.replace("/login");
             }
-            return window.location.replace("/admin");
+            return window.location.replace("/admin/admin-login");
         }
         return response.data;
     } catch (error) {
