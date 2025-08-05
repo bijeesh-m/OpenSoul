@@ -7,31 +7,14 @@ const UserGroupCard = ({ group }) => {
   return (
     <div
       onClick={() => navigate(`/confession-page/${group._id}`)}
-      className="w-full h-56 justify-center  text-center sm:w-1/2 md:w-1/3 lg:w-1/4 p-4"
+      className="w-full flex flex-col rounded-2xl overflow-hidden h-46 shadow-2xl bg-white  justify-center   text-center "
     >
-      <div className="rounded-xl overflow-hidden   bg-slate-800  shadow-lg transition-all duration-700 h-full flex flex-col justify-between">
-        {/* Foreground Content */}
-        <div className="  font-semibold    w-full h-full  flex flex-col items-center  justify-between">
-          <div className="  flex-1 flex bg-red-200 w-full h-full justify-center items-center    ">
-            {/* <div className=" hover:scale-110 duration-500 w-14 h-14 rounded-full overflow-hidden"> */}
-              <img
-                className="object-cover w-full h-full"
-                src={group?.groupIcon}
-                alt=""
-              />
-            {/* </div> */}
-          </div>
-          <div className="flex-1  w-full">
-            <div>
-              <h3 className="text-xl text-green-500 font-semibold mb-2 line-clamp-1">
-                {group?.name}
-              </h3>
-            </div>
-            <p className="font-thin text-white text-sm mb-4 line-clamp-2">
-              {group?.description}
-            </p>
-          </div>
-        </div>
+      <div className=" flex-1 bg-yellow-100   " style={{backgroundImage:`url(${group.groupIcon})`, backgroundSize:"cover"}} >
+        {/* <div className=" w-18 h-18 rounded-full bg-red-300 "></div> */}
+      </div>
+      <div className=" flex-1 flex-col  flex justify-center items-center">
+          <h1 className="text-xl font-bold">{group.name}</h1>
+          <p className=" font-thin line-clamp-1">{group.description}</p>
       </div>
     </div>
   );

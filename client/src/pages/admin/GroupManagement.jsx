@@ -224,12 +224,12 @@ const ConfessionGroupManagement = () => {
                                         className="w-full p-2 border rounded"
                                     />
                                     {previewImage && (
-                                        <div className=" flex justify-center bg-slate-50 items-center">
-                                            <div className="rounded-xl w-1/2 text-center overflow-hidden bg-white shadow-lg transition-all duration-700 h-full flex flex-col justify-between">
+                                        <div className=" flex justify-center mt-5 items-center ">
+                                            <div className="rounded-xl w-1/2  text-center overflow-hidden bg-red-500 shadow-lg transition-all duration-700 h-44 flex flex-col justify-between">
                                                 {/* Foreground Content */}
-                                                <div className="  font-semibold   w-full h-full p-6 flex flex-col items-center gap-3 justify-between">
-                                                    <div className="w-14 h-14  overflow-hidden rounded-full ">
-                                                        <img className=" object-contain" src={previewImage} alt="" />
+                                                <div className="  font-semibold bg-red-200   w-full h-full  flex flex-col items-center gap-3 justify-between">
+                                                    <div className="  flex-1  bg-red- ">
+                                                        <img className=" object-cover w-full h-full" src={previewImage} alt="" />
                                                     </div>
                                                     <div className="flex-1">
                                                         <div>
